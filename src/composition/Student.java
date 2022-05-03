@@ -1,19 +1,37 @@
 package composition;
 
-public class Student {
+public class Student implements Address {
 
     private String name;
     private int age;
-    private Address address;  //(String streetAddress, int zipCode, String state, String phone);
+    public String phone;
+    public String state;
+    public String streetAddress;
+    public int zipCode;
 
     public Student(String streetAddress, int zipCode, String state, String phone, String name, int age) {
-        this.address = new AddressInfo();
         this.name = name;
         this.age = age;
+        this.phone = phone;
+        this.state = state;
+        this.streetAddress = streetAddress;
+        this.zipCode = zipCode;
     }
 
-    public Student() {
+    public String getPhone(){
+        return phone;
+    }
 
+    public String getState(){
+        return state;
+    }
+
+    public String getStreetAddress(){
+        return streetAddress;
+    }
+
+    public int getZipCode(){
+        return zipCode;
     }
 
     public int getAge() {
@@ -31,15 +49,4 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
-
-    //-----------------------------------
-
-    public void setAddressAbility (Address newAddressType) {
-        address = newAddressType;
-    }
-
-    public String getState() {
-        return address.address().toString();
-    }
-
 }
