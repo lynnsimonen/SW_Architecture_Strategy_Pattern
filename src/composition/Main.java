@@ -8,5 +8,7 @@ public class Main {
 
         System.out.println(student1.getName() + " is from " + student1.getState());
         System.out.println(student2.getName() + " is from " + student2.getState());
+
+
     }
 }

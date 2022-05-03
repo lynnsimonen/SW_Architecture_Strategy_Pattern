@@ -1,19 +1,21 @@
 package composition;
 
-public class Address {
+public interface Address {
+    Address address();
+}
 
-    private String streetAddress;
-    private int zipCode;
-    private String state;
-    private String phone;
+class AddressInfo implements Address{
+    String streetAddress;
+    int zipCode;
+    String state;
+    String phone;
 
-    public Address(String streetAddress, int zipCode, String state, String phone) {
-        this.streetAddress = streetAddress;
-        this.zipCode = zipCode;
-        this.state = state;
-        this.phone = phone;
+    public Address address() {
+
+        return new AddressInfo();
+
+        //return streetAddress + ", " + zipCode + ", " + state + " phone: " + phone;
     }
-
     public String getPhone() {
         return phone;
     }
@@ -44,5 +46,14 @@ public class Address {
 
     public void setZipCode(int zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public static String getHello() {
+        return "hello";
+    }
+
+    @Override
+    public String toString() {
+        return state;
     }
 }
