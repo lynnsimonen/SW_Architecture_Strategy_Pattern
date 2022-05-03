@@ -21,6 +21,7 @@ public class Main {
         }
 
         System.out.printf("%-20s $%7.2f", "Total: ", total);
+        
     }
 
 }
